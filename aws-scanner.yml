@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  aws-scanner:
+    lang: python3
+    handler: ./aws-scanner
+    image: ghcr.io/ponkio/aws-scanner:latest
+
