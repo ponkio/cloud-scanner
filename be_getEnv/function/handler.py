@@ -27,10 +27,11 @@ def handle(req):
 
     mongoClient = pymongo.MongoClient(mongo_url)
 
+    customer_id = os.environ['Http_Customerid']
     db = mongoClient[customer_id]
+    
     config_collection = db['landscape_config']
 
-    customer_id = os.environ['Http_Customerid']
 
     try:
         logging.info(f"Getting environments for {customer_id}")
