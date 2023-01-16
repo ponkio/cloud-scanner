@@ -7,4 +7,6 @@ functions:
     lang: python3
     handler: ./aws-scanner
     image: ghcr.io/ponkio/aws-scanner:latest
+    secrets:
+      - mongo-pwd
 
