@@ -71,8 +71,6 @@ RUN steampipe plugin install aws
 
 RUN mkdir /home/app/.aws
 RUN echo "[default]" > /home/app/.aws/credentials
-RUN echo "aws_access_key_id = AKIAQFLRZ7SZVN5Y4Y55" >> /home/app/.aws/credentials
-RUN echo "aws_secret_access_key = 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" >> /home/app/.aws/credentials
 
 ENV write_debug="true"
 ENV fprocess="python3 index.py"
