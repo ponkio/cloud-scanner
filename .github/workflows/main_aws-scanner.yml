@@ -10,6 +10,10 @@ on:
       - main
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: aws-scanner
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,11 +30,10 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-        working_directory: aws-scanner
+        
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-        working_directory: aws-scanner
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -40,7 +43,7 @@ jobs:
           name: python-app
           path: |
             . 
-            !aws-scanner/venv/
+            !venv/
 
   deploy:
     runs-on: ubuntu-latest
